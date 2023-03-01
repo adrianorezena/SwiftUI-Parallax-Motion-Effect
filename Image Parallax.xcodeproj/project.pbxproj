@@ -11,6 +11,7 @@
 		80AB08B829AEAAA0007212F4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB08B729AEAAA0007212F4 /* ContentView.swift */; };
 		80AB08BA29AEAAA0007212F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80AB08B929AEAAA0007212F4 /* Assets.xcassets */; };
 		80AB08BD29AEAAA0007212F4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80AB08BC29AEAAA0007212F4 /* Preview Assets.xcassets */; };
+		80AB08C429AEAC4E007212F4 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB08C329AEAC4E007212F4 /* MotionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		80AB08B729AEAAA0007212F4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		80AB08B929AEAAA0007212F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80AB08BC29AEAAA0007212F4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		80AB08C329AEAC4E007212F4 /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				80AB08B529AEAAA0007212F4 /* Image_ParallaxApp.swift */,
 				80AB08B729AEAAA0007212F4 /* ContentView.swift */,
+				80AB08C329AEAC4E007212F4 /* MotionManager.swift */,
 				80AB08B929AEAAA0007212F4 /* Assets.xcassets */,
 				80AB08BB29AEAAA0007212F4 /* Preview Content */,
 			);
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80AB08B829AEAAA0007212F4 /* ContentView.swift in Sources */,
+				80AB08C429AEAC4E007212F4 /* MotionManager.swift in Sources */,
 				80AB08B629AEAAA0007212F4 /* Image_ParallaxApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,8 +277,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,8 +306,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
