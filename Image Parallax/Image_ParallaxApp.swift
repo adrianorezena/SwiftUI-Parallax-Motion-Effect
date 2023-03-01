@@ -11,7 +11,9 @@ import SwiftUI
 struct Image_ParallaxApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                ContentView()
+            }
         }
     }
 }

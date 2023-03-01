@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var motionManager = MotionManager()
-    let imagePadding: CGFloat = 40
+    let imagePadding: CGFloat = 60
     
     var body: some View {
         ZStack {
@@ -18,7 +18,31 @@ struct ContentView: View {
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
                 .padding(-imagePadding)
-//                .offset(x: motionManager.x, y: motionManager.y)
+                 .offset(x: motionManager.offset.width, y: motionManager.offset.height)
+            
+            VStack {
+                Text("WELCOME")
+                    .font(.system(size: 60))
+                    .fontWeight(.black)
+                    .foregroundColor(.white)
+                
+                NavigationLink(
+                    destination: {
+                        Text("Other screen")
+                    }, label: {
+                        Text("NEXT")
+                            .font(.title2)
+                            .fontWeight(.black)
+                            .foregroundColor(.white)
+                            .padding(20)
+                            .overlay {
+                                RoundedRectangle(cornerRadius: 30)
+                                    .stroke(lineWidth: 2)
+                                    .foregroundColor(.white)
+                            }
+                    }
+                )
+            }
         }
         .onAppear {
             motionManager.start(padding: imagePadding)

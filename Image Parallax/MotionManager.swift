@@ -11,24 +11,46 @@ import CoreMotion
 final class MotionManager: ObservableObject {
     
     @Published var cmMotionManager = CMMotionManager()
-    @Published var x: CGFloat = 0
-    @Published var y: CGFloat = 0
+    @Published var offset: CGSize = .zero
     
     func start(padding: CGFloat) {
-        cmMotionManager.startDeviceMotionUpdates(to: .main) { data, error in
+        cmMotionManager.startDeviceMotionUpdates(to: OperationQueue()) { data, error in
             guard let data = data else {
                 return
             }
 
-            print("x: \(data.attitude.roll) | y: \(data.attitude.pitch)")
-            
-            // let maxPadding: CGFloat = 1.5
-            
-            withAnimation {
-                self.x = data.attitude.roll
-                self.y = data.attitude.pitch
+            DispatchQueue.main.async {
+                withAnimation {
+                    let offset = self.calcOffset(x: data.attitude.roll, y: data.attitude.pitch, padding: padding)
+                    self.offset = offset
+                }
             }
         }
+    }
+    
+    private func calcOffset(x: CGFloat, y: CGFloat, padding: CGFloat) -> CGSize {
+        let maxPadding: CGFloat = 1.5
+        var newX: CGFloat = x
+        var newY: CGFloat = y
+        
+        if newX < 0 {
+            newX = max(-maxPadding, newX)
+        } else {
+            newX = min(maxPadding, newX)
+        }
+        
+        newX = (newX / maxPadding) * padding
+        
+        if newY < 0 {
+            newY = max(-maxPadding, newY)
+        } else {
+            newY = min(maxPadding, newY)
+        }
+
+        newY = (newY / maxPadding) * padding
+      
+        print("x: \(newX) | y: \(newY)")
+        return CGSize(width: newX, height: newY)
     }
     
     func stop() {
