@@ -49,7 +49,7 @@ final class MotionManager: ObservableObject {
 
         newY = (newY / maxPadding) * padding
       
-        print("x: \(newX) | y: \(newY)")
+        debugPrint("x: \(newX) | y: \(newY)")
         return CGSize(width: newX, height: newY)
     }
     
