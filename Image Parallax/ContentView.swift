@@ -10,6 +10,9 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var motionManager = MotionManager()
     let imagePadding: CGFloat = 60
+    var shadowSize: CGSize {
+        return CGSize(width: motionManager.offset.width * 0.3, height: motionManager.offset.height * 0.3)
+    }
     
     var body: some View {
         ZStack {
@@ -18,13 +21,14 @@ struct ContentView: View {
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
                 .padding(-imagePadding)
-                 .offset(x: motionManager.offset.width, y: motionManager.offset.height)
+                .offset(x: motionManager.offset.width, y: motionManager.offset.height)
             
             VStack {
                 Text("WELCOME")
                     .font(.system(size: 60))
                     .fontWeight(.black)
                     .foregroundColor(.white)
+                    .shadow(radius: 4, x: shadowSize.width, y: shadowSize.height)
                 
                 NavigationLink(
                     destination: {
